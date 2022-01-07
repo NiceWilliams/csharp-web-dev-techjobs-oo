@@ -60,18 +60,31 @@ namespace TechJobsTests
         {
             Job testingAgain = new Job("Product Tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
 
-            string testingMyPatience = "ID: 1" +
-                                       "Name: Product tester" +
-                                       "Employer: ACME" +
-                                       "Location: Desert" +
-                                       "Position Type: Quality control" +
-                                       "Core Competency: Persistence";
+           string testingMyPatience = "\nID: 11" +
+                                       "\nName: Product Tester" +
+                                       "\nEmployer: ACME" +
+                                       "\nLocation: Desert" +
+                                       "\nPosition Type: Quality Control" +
+                                       "\nCore Competency: Persistence\n";
 
             Assert.AreEqual(testingMyPatience, testingAgain.ToString());
 
 
         }
 
+        [TestMethod]
+        public void TestToStringEmptyCells()
+        {
+            Job lastTest = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
+            string testingMyPatience = "\nID: 9" +
+                                       "\nName: Data not available!" +
+                                       "\nEmployer: Data not available!" +
+                                       "\nLocation: Data not available!" +
+                                       "\nPosition Type: Data not available!" +
+                                       "\nCore Competency: Data not available!\n";
+            Assert.AreEqual(testingMyPatience, lastTest);
+
+        }
         
     }
 }

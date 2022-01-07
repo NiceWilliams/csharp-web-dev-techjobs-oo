@@ -43,12 +43,22 @@ namespace TechJobsOO
 
         public override string ToString()
         {
-           return $"\nID: {Id}" +
-                    $"Name: {Name}\n" +
-                    $"Employer: {EmployerName}\n" +
-                    $"Location: {EmployerLocation}\n" +
-                    $"Position Type: {JobType}\n" +
-                    $"Core Competency: {JobCoreCompetency}\n";
+            string freshName;
+            if (Name == "" || Name == null)
+            {
+                freshName = "Data not available!";
+            }
+            else
+            {
+                freshName = Name;
+            }
+                return $"\nID: {Id}\n" +
+                        $"Name: {freshName}\n" +
+                        $"Employer: {EmployerName}\n" +
+                        $"Location: {EmployerLocation}\n" +
+                        $"Position Type: {JobType}\n" +
+                        $"Core Competency: {JobCoreCompetency}\n";
+           
         }
     }
 }
